@@ -8,3 +8,17 @@ bool isPalindrome(int x) {
 	reverse(s2.begin(),s2.end());
 	return s1 == s2 ? true : false;       
 }
+
+//直接数字倒序
+bool isPalindrome(int x) {
+	int temp = x;
+	int reversex = 0;
+	if(x < 0)
+		return false;
+	while(temp)
+	{
+		reversex = reversex * 10 + temp % 10;
+		temp  = temp / 10;
+	}       
+	return reversex == x ? true : false;
+}
