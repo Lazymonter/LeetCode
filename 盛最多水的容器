@@ -1,0 +1,15 @@
+//暴力法
+int maxArea(vector<int>& height) {
+	int max = 0;
+	for(int i = 0;i < height.size();i++)
+	{
+		for(int j = i + 1;j < height.size();j++)
+		{
+			int heighttemp = height[i] <= height[j] ? height[i] : height[j];
+			int areatemp = heighttemp * (j - i);
+			max = max >= areatemp ? max : areatemp;
+		}
+	}
+	return max;        
+}
+
