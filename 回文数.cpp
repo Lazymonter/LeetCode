@@ -1,5 +1,10 @@
 //回文数判断
 //方法一转换为字符串
+#include<iostream>
+#include<string>
+#include<vector>
+
+using namespace std;
 bool isPalindrome(int x) {
 	stringstream ss;
 	ss << x;

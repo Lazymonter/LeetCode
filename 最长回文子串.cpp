@@ -3,6 +3,11 @@
 //输出: "bab"
 //注意: "aba"也是一个有效答案。
 //暴力遍历法
+#include<iostream>
+#include<string>
+
+using namespace std;
+
 string longestPalindrome(string s) {
     int length = s.length();
  	string result = "";

@@ -1,3 +1,7 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
 //暴力法
 int maxArea(vector<int>& height) {
 	int max = 0;

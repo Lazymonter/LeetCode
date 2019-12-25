@@ -2,6 +2,11 @@
 //你可以假设除了数字 0 之外，这两个数字都不会以零开头。
 //初等数学知识，逆序存储只需按照链表顺序从前往后相加即可
 //如果链表不是逆序存储，可以按照链表顺序依次将值压入栈，然后从栈取出依次相加，结果压入结果栈最后按弹出顺序组成链表即可
+#include<iostream>
+#include<string>
+#include<vector>
+
+using namespace std;
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode * temp1 = l1;
         ListNode * temp2 = l2;

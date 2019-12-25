@@ -1,3 +1,8 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
 string convert(string s,int numRows)
 {
 	if(numRows == 1)
