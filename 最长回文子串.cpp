@@ -2,13 +2,57 @@
 //输入: "babad"
 //输出: "bab"
 //注意: "aba"也是一个有效答案。
-//暴力遍历法
-#include<iostream>
-#include<string>
+
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-string longestPalindrome(string s) {
+// Manacher
+string longestPalindrome(string s){
+    if(s == "") return s;
+    string s_pro = "$";
+    for(char c : s){
+        s_pro.push_back(c);
+        s_pro.push_back('#');
+    }
+    s_pro.push_back('&');
+    int len = s_pro.length();
+    vector<int> p(len,0);
+    int max_len = -1,mid_point = -1;
+    int pos = 0,maxright = 0;
+    for(int i = 1;i < len;i++){
+        if(i < maxright){
+            p[i] = min(p[(pos << 1) - i],maxright - i);
+        }
+        else{
+            p[i] = 1;
+        }
+        while(s_pro[i - p[i]] == s_pro[i + p[i]]){
+            p[i]++;
+        }
+        if(maxright < i + p[i]){
+            pos = i;
+            maxright = i + p[i];
+        }
+        //max_len = max(max_len,p[i] - 1);
+        if(max_len < p[i] - 1){
+            mid_point = i;
+            max_len = p[i] - 1;
+        }
+    }
+    string temp = s_pro.substr(mid_point - max_len,(max_len << 1) + 1);
+    string res = "";
+    for(char c : temp){
+        if(c != '#'){
+            res.push_back(c);
+        }
+    }
+    return res;
+}
+//暴力遍历法
+string longestPalindrome_sss(string s) {
     int length = s.length();
  	string result = "";
  	int resultlen = 0;
@@ -97,4 +141,4 @@ string longestPalindrome(string s) {
         }
     
  	return max;
-    }
+}
