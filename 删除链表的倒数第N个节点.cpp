@@ -20,10 +20,10 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
     ListNode *forward = head;
     ListNode *beh = head;
     for(int i = 0;i <= n;i++){
+        if(forward == NULL){
+            return head->next;
+        }
         forward = forward->next;
-    }
-    if(forward == NULL){
-        return head->next;
     }
     while(forward != NULL){
         forward = forward->next;
@@ -32,7 +32,6 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
     ListNode *del = beh->next;
     beh->next = beh->next->next;
     del->next = NULL;
-    delete beh;
     return head;
 }
 

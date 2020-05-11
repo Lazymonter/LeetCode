@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include <vector>
 
 using namespace std;
 //暴力法
@@ -34,5 +35,11 @@ int maxArea(vector<int>& height) {
      		right--;
      } 
      return max;  
+}
+
+int main(){
+    vector<int> nums = {1,8,6,2,5,4,8,3,7};
+    cout << maxArea(nums) << endl;
+    return 0;
 }
 
