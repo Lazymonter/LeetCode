@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <stack>
+#include <vector>
+
 
 using namespace std;
 
@@ -31,6 +33,21 @@ void treeBFS(TreeNode *root) {
         }
     }
     cout << endl;
+}
+
+template <typename T>
+void printSingleVec(vector<T> &vec) {
+    for(typename vector<T>::iterator it = vec.begin(); it != vec.end();it++){
+        cout << (*it) << " ";
+    }
+    cout << endl;
+}
+
+template <typename T>
+void printMultiVec(vector<T> &vec){
+    for(typename vector<T>::iterator it = vec.begin();it != vec.end();it++){
+        printSingleVec(*it);
+    }
 }
 
 #endif /* MYUTIL_HPP */
