@@ -5,7 +5,7 @@ using namespace std;
 
 int searchInsert(vector<int> &nums, int target) {
     int len = nums.size();
-    int left = 0, right = len - 1, res = 0;
+    int left = 0, right = len - 1, res = len;
     while(left <= right) {
         int mid = (left + right) >> 1;
         if(target <= nums[mid]) {
