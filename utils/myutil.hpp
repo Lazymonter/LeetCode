@@ -22,18 +22,18 @@ void treeBFS(TreeNode *root) {
     if(root == nullptr) {
         return;
     }
-    stack<TreeNode *> s;
-    s.push(root);
-    while(!s.empty()) {
-        TreeNode *temp = s.top();
-        s.pop();
+    queue<TreeNode *> q;
+    q.push(root);
+    while(!q.empty()) {
+        TreeNode *temp = q.front();
+        q.pop();
         cout << temp->val << " ";
-        if(temp->right != nullptr) {
-            s.push(temp->right);
-        }
         if(temp->left != nullptr) {
-            s.push(temp->left);
+            q.push(temp->left);
         }
+        if(temp->right != nullptr) {
+            q.push(temp->right);
+        }    
     }
     cout << endl;
 }
