@@ -18,6 +18,23 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right):val(x), left(left), right(right){}
 };
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(): val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
+void printLinkList(ListNode *head) {
+    if (head == nullptr) return;
+    ListNode *temp = head;
+    while (temp != nullptr) {
+        cout << temp->val << " ";
+    }
+    cout << endl;
+}
+
 void treeBFS(TreeNode *root) {
     if(root == nullptr) {
         return;
