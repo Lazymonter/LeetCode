@@ -26,11 +26,23 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+ListNode *initLinkList(vector<int> &list) {
+    ListNode *head = new ListNode();
+    ListNode *cur = head;
+    for (int &i : list) {
+        cur->next = new ListNode(i);
+        cur = cur->next;
+    }
+
+    return head->next;
+}
+
 void printLinkList(ListNode *head) {
     if (head == nullptr) return;
     ListNode *temp = head;
     while (temp != nullptr) {
         cout << temp->val << " ";
+        temp = temp->next;
     }
     cout << endl;
 }
