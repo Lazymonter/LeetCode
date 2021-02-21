@@ -76,5 +76,7 @@
 ## 回溯法
 
 ## 滑动窗口
+### 模板
+https://leetcode-cn.com/problems/max-consecutive-ones-iii/solution/fen-xiang-hua-dong-chuang-kou-mo-ban-mia-f76z/
 
 ## 差分数组
