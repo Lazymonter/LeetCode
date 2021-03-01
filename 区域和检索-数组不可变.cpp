@@ -23,6 +23,23 @@ private:
     vector<int> * nums;
 };   
 
+class NumArray2 {
+public:
+    vector<int> sum;
+
+    NumArray2(vector<int> &nums) {
+        int len = nums.size();
+        sum.resize(len + 1);
+        for (int i = 0; i < len; ++i) {
+            sum[i + 1] = nums[i] + sum[i];
+        }
+    }
+
+    int sumRange(int i, int j) {
+        return sum[j + 1] - sum[i];
+    }
+};
+
 int main(){
     vector<int> nums = {-2, 0, 3, -5, 2, -1};
     NumArray *pol = new NumArray(nums);
