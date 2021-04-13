@@ -35,6 +35,33 @@ int minDiffInBST(TreeNode *root) {
     return minVal;
 }
 
+
+int minDiffInBST_s(TreeNode *root) {
+    if (nullptr == root) {
+        return 0;
+    }
+
+    int minVal = INT_MAX, pre = -1;
+    stack<TreeNode *> st;
+    while (root != nullptr || !st.empty()) {
+        while (root != nullptr) {
+            st.push(root);
+            root = root->left;
+        }
+
+        root = st.top();
+        st.pop();
+        if (pre == -1) {
+            pre = root->val;
+        } else {
+            minVal = min(minVal, root->val - pre);
+            pre = root->val;
+        }
+        root = root->right;
+    }
+
+    return minVal;
+}
 int main() {
     TreeNode n1(4), n2(2), n3(6), n4(1), n5(3);
     n1.left = &n2;
