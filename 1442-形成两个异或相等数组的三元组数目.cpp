@@ -19,7 +19,7 @@ int countTriplets(std::vector<int> &arr) {
             ret += count[temp] * i - total[temp];
         }
 
-        ++count[temp];
+        ++count[sum];
         total[sum] += i;
         sum = temp;
     }
