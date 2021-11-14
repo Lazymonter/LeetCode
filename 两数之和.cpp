@@ -5,6 +5,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include <map>
 
 using namespace std;
 vector<int> twoSum(vector<int>& nums, int target) {
@@ -40,4 +41,4 @@ vector<int> twoSum(vector<int>& nums, int target) {
         }
         return result;
         
-    }
+}
